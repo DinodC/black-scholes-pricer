@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+  <!-- First column to collect inputs -->
+  <div class="column">
+    <fieldset id="fieldset_parameters">
+      <legend><h3>Contract Parameters</h3></legend>
+      <!-- Underlying -->
+      <fieldset id="fieldset_underlying">
+        <legend id="text_underlying">Underlying asset:</legend>
+        <input type="radio" name="underlying" value="stock" id="stock" onclick="set_display()" onchange="calculate()">Stock
+        <input type="radio" name="underlying" value="future" id="future" onclick="set_display()" onchange="calculate()">Future
+        <input type="radio" name="underlying" value="currency" id="currency" onclick="set_display()" onchange="calculate()">Currency
+      </fieldset>
+      <!-- Spot -->
+      <p>
+        <legend id="text_spot">Spot price (in SGD):</legend>
+        <input type="number" name="spot" step="any" min="1" max="9999999" value="100.0" id="spot" onclick="calculate()" oninput="calculate()">
+      </p>
+      <!-- Strike -->
+      <p>
+        <legend id="text_strike">Strike price (in SGD):</legend>
+        <input type="number" name="strike" step="any" min="1" max="9999999" value="100.0" id="strike" onclick="calculate()" oninput="calculate()">
+      </p>
+      <!-- Risk-free rate -->
+      <p>
+        <legend id="text_riskfree">Risk-free rate (in %):</legend>
+        <input type="number" name="riskfree" step="0.1" min="-50" max="50" value="2.0" id="riskfree" onclick="calculate()" oninput="calculate()">
+      </p>
+      <!-- Dividend yield -->
+      <p id="div_dividend">
+        <legend id="text_dividend">Dividend yield (in %):</legend>
+          <input type="number" name="dividend" step="0.1" min="-50" max="50" value="3.0" id="dividend" onclick="calculate()" oninput="calculate()">
+      </p>
+      <!-- Time-to-maturity -->
+      <p>
+        <legend id="text_maturity">Time-to-maturity (in years):</legend>
+        <input type="number" name="maturity" step="0.05" min="0.25" max="10" value="0.5" id="maturity" onclick="calculate()" oninput="calculate()">
+      </p>
+      <!-- Volatility -->
+      <p>
+        <legend id="text_volatility">Volatility (in %):</legend>
+        <input type="number" name="volatility" step="0.10" min="1" max="100" value="15.0" id="volatility" onclick="calculate()" oninput="calculate()">
+      </p>
+    </fieldset>
+  </div>
+  <!-- Second column to display outputs-->
+  <div class="column">
+    <!-- Table of outputs -->
+    <table id="table_output">
+      <!-- <h3>Option Value and Greeks</h3> -->
+      <tr>
+        <th>Price and Greeks</th>
+        <th>Call</th>
+        <th>Put</th>
+      </tr>
+      <tr>
+        <td><legend>Value (in SGD)</legend></td>
+        <td id="call"></td>
+        <td id="put"></td>
+      </tr>
+      <tr>
+        <td><legend>Delta</legend></td>
+        <td id="delta_call"></td>
+        <td id="delta_put"></td>
+      </tr>
+      <tr>
+        <td><legend>Gamma</legend></td>
+        <td id="gamma" colspan="2"></td>
+      </tr>
+      <tr>
+        <td><legend>Vega</legend></td>
+        <td id="vega" colspan="2"></td>
+      </tr>
+      <tr>
+        <td><legend>Theta</legend></td>
+        <td id="theta_call"></td>
+        <td id="theta_put"></td>
+      </tr>
+      <tr>
+        <td><legend>Rho</legend></td>
+        <td id="rho_call"></td>
+        <td id="rho_put"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+{% endblock %}

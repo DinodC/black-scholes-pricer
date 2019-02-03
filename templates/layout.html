@@ -1,0 +1,40 @@
+<html>
+  <!-- Set the viewport to control dimension and scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>Generalized Black-Scholes Pricer</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="static/scripts/calculate.js"></script>
+    <script type="text/javascript" src="static/scripts/blackscholes.js"></script>
+    <!-- MathJax -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  </head>
+  <body>
+
+    <header>
+      <h1>Generalized Black-Scholes Pricer</h1>
+      <p id="emphasize">Version 1.0</p>
+
+      <!-- Menu hamburger-->
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <!-- Hamburger -->
+        <span></span>
+        <span></span>
+        <span></span>
+        <!-- Menu -->
+        <ul id="menu">
+          <li><a href="/">Black-Scholes Pricer</a></li>
+          <li><a href="/About/">About</a></li>
+          <li><a href="/Contact/">Contact</a></li>
+        </ul>
+      </div>
+
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+  </body>
+</html>

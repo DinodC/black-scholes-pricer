@@ -1,0 +1,226 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background-color: black;
+}
+
+input {
+  background-color: gainsboro;
+  font-size: 15px;
+}
+
+output {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+legend {
+  font-weight: 600;
+}
+
+button {
+  background-color: gainsboro;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 5px;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+/* Emphasize certain words in bright color */
+#emphasize {
+  color: tomato;
+}
+
+/* Fieldset */
+#fieldset_parameters {
+  background-color: white;
+}
+
+#fieldset_underlying {
+  background-color: gainsboro;
+}
+
+/* Output */
+
+/* Two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#table_output {
+  margin-top: 10px;
+}
+
+#table_output th {
+  background-color: tomato;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  /* background-color: gainsboro; */
+}
+
+
+/* Menu: links */
+a {
+  text-decoration: none;
+  color: black;
+
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: tomato;
+}
+
+/* a:visited {
+  color: black;
+} */
+
+/* Menu */
+#menuToggle {
+  display: block;
+  position: absolute;
+  /* top: 40px; */
+  top: 45px;
+  /* left: 10px; */
+  left: 20px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+
+/* Menu 'hamburger' */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  /* margin-bottom: 6px; */
+  margin-bottom: 5px;
+  position: relative;
+
+  background: gainsboro;
+  /* border-radius: 3px; */
+  border-radius: 2.5px;
+
+  /* Recall that z-index property specifies the stack order of an element */
+  z-index: 1;
+
+  /* transform-origin: 4px 0px; */
+  transform-origin: 5px 0px;
+
+  /* Controls transformation from 'hamburger' to 'cross' */
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+              background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+              opacity 0.55s ease;
+}
+
+/* Enable to click first and last slices */
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* Transform slices into a cross */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: gainsboro;
+}
+
+/* Hide the middle slice */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/* The last slice should go the other direction */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(-2px, -1px);
+}
+
+/* Position at the top left of the screen */
+#menu {
+  position: absolute;
+  width: 350px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  text-align: left;
+
+  background: white;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+/* Menu: list */
+#menu li {
+  padding: 10px 0;
+  font-size: 17.5px;
+}
+
+/* Slide menu from the left */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones */
+  .menu, .main, .right  {
+    width:100%;
+  }
+}
