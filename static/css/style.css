@@ -126,14 +126,12 @@ a:hover {
 } */
 
 
-/* Menu */
+/* Hamburger menu: location */
 #menuToggle {
   display: block;
   position: absolute;
-  /* top: 40px; */
-  top: 45px;
-  /* left: 10px; */
-  left: 20px;
+  top: 51px;
+  left: 12.5px;
 
   z-index: 1;
 
@@ -141,6 +139,7 @@ a:hover {
   user-select: none;
 }
 
+/*  */
 #menuToggle input {
   display: block;
   width: 50px;
@@ -157,24 +156,21 @@ a:hover {
   -webkit-touch-callout: none;
 }
 
-/* Menu 'hamburger' */
+/* Hamburger menu: dimension */
 #menuToggle span {
   display: block;
-  width: 33px;
-  height: 4px;
-  /* margin-bottom: 6px; */
-  margin-bottom: 5px;
+  width: 18px;
+  height: 2px;
+  margin-bottom: 2px;
   position: relative;
 
   background: gainsboro;
-  /* border-radius: 3px; */
   border-radius: 2.5px;
 
   /* Recall that z-index property specifies the stack order of an element */
   z-index: 1;
 
-  /* transform-origin: 4px 0px; */
-  transform-origin: 5px 0px;
+  transform-origin: 4px 0px;
 
   /* Controls transformation from 'hamburger' to 'cross' */
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
