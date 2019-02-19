@@ -16,32 +16,32 @@
       <!-- Spot -->
       <p>
         <legend id="text_spot">Spot price (in SGD):</legend>
-        <input type="number" name="spot" step="any" min="1" max="9999999" value="100.0" id="spot" onclick="calculate()" oninput="calculate()">
+        <input type="number" name="spot" step="any" min="1" max="9999999" value="100" id="spot" onclick="calculate()" oninput="calculate()">
       </p>
       <!-- Strike -->
       <p>
         <legend id="text_strike">Strike price (in SGD):</legend>
-        <input type="number" name="strike" step="any" min="1" max="9999999" value="100.0" id="strike" onclick="calculate()" oninput="calculate()">
+        <input type="number" name="strike" step="any" min="1" max="9999999" value="100" id="strike" onclick="calculate()" oninput="calculate()">
       </p>
       <!-- Risk-free rate -->
       <p>
         <legend id="text_riskfree">Risk-free rate (in %):</legend>
-        <input type="number" name="riskfree" step="0.1" min="-50" max="50" value="2.0" id="riskfree" onclick="calculate()" oninput="calculate()">
+        <input type="number" name="riskfree" step="0.1" min="-50" max="50" value="2" id="riskfree" onclick="calculate()" oninput="calculate()">
       </p>
       <!-- Dividend yield -->
       <p id="div_dividend">
         <legend id="text_dividend">Dividend yield (in %):</legend>
-          <input type="number" name="dividend" step="0.1" min="-50" max="50" value="3.0" id="dividend" onclick="calculate()" oninput="calculate()">
+          <input type="number" name="dividend" step="0.1" min="-50" max="50" value="3" id="dividend" onclick="calculate()" oninput="calculate()">
       </p>
       <!-- Time-to-maturity -->
       <p>
         <legend id="text_maturity">Time-to-maturity (in years):</legend>
-        <input type="number" name="maturity" step="0.05" min="0.25" max="10" value="0.5" id="maturity" onclick="calculate()" oninput="calculate()">
+        <input type="number" name="maturity" step="0.05" min="0.05" max="10" value="0.25" id="maturity" onclick="calculate()" oninput="calculate()">
       </p>
       <!-- Volatility -->
       <p>
         <legend id="text_volatility">Volatility (in %):</legend>
-        <input type="number" name="volatility" step="0.10" min="1" max="100" value="15.0" id="volatility" onclick="calculate()" oninput="calculate()">
+        <input type="number" name="volatility" step="0.10" min="1" max="100" value="15" id="volatility" onclick="calculate()" oninput="calculate()">
       </p>
     </fieldset>
   </div>
