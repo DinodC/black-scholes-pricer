@@ -2,31 +2,40 @@
 
 {% block content %}
 <!-- Introduction: Black-Scholes model -->
-<h3>The Generalized Black-Scholes Pricing Formulae</h3>
+<h3>The Black-Scholes Model</h3>
 <p>
-  The Black-Scholes formula might be the most used probability model/tool in
-  everyday use - even if we consider all other scientific disciplines. Tens and
-  thousands people, including traders, market makers, and salespeople, use
-  option formulas several times a day.
+  In the early 1970s, the Black-Scholes model together with the development of
+  options exchanges ushered growth in derivatives markets. The Black-Scholes
+  model brought respectability to options trading by providing efficient
+  pricing and hedging of derivatives instruments, while the newly established
+  exchanges supplied the needed infrastructure for options trading activities to
+  take place. Inevitably, the Black-Scholes model became the industry standard.
 </p>
+
 <!-- Black-Scholes formulae for call and put option -->
+<h3>The Black-Scholes Pricing Formulae</h3>
 <p>
-  The Black-Scholes model can be generalized by incorporating a carry rate \( b \).
-  This model can be used to price European options on stocks, stocks paying a
-  continuous dividend yield, options on futures, and currency options:
+  A generalized form of the Black-Scholes model is presented below by
+  introducing a carry rate \( b \). The model can be used to price European
+  options on stocks, stocks paying continuous dividend yields, futures, and
+  currency options:
   $$ call = S e^{(b-r)T} N(d_1) - X e^{-rT} N(d_2) $$
   $$ put = X e^{-rT} N(-d_2) - S e^{(b-r)T} N(-d_1), $$
   where
   $$ d_1 = \frac{ln(S/X) + \left(b + \frac{\sigma^2}{2}\right)T}{\sigma \sqrt{T}} $$
   $$ d_2 = d_1 - \sigma \sqrt{T}$$
-  \( b = r \) gives the Black and Scholes (1973) stock option model.
+  \( b = r \) gives the <a href="https://econpapers.repec.org/article/ucpjpolec/v_3a81_3ay_3a1973_3ai_3a3_3ap_3a637-54.htm" target="_blank">
+    Black and Scholes (1973)</a> stock option model.
   <br/>
-  \( b = r - q \) gives the Merton (1973) stock option model with continuous
+  \( b = r - q \) gives the <a href="https://econpapers.repec.org/article/rjebellje/v_3a4_3ay_3a1973_3ai_3aspring_3ap_3a141-183.htm" target="_blank">
+    Merton (1973)</a> stock option model with continuous
   dividend yield \( q \).
   <br/>
-  \( b = 0 \) gives the Black (1976) futures option model.
+  \( b = 0 \) gives the <a href="https://econpapers.repec.org/article/eeejfinec/v_3a3_3ay_3a1976_3ai_3a1-2_3ap_3a167-179.htm" target="_blank">
+    Black (1976)</a> futures option model.
   <br/>
-  \( b = r - r_f \) gives the Garman and Kohlhagen (1983) currency option model.
+  \( b = r - r_f \) gives the <a href="https://econpapers.repec.org/article/eeejimfin/v_3a2_3ay_3a1983_3ai_3a3_3ap_3a231-237.htm" target="_blank">
+    Garman and Kohlhagen (1983)</a> currency option model.
 </p>
 
 <!-- Introduction: Greeks -->
@@ -37,7 +46,7 @@
   of the option price to a small change in a parameter of the formula.
 </p>
 <!-- Black-Scholes formulae for the greeks -->
-<h3>Delta</h3>
+<h4>Delta</h4>
 <p>
   Delta is the option's sensitivity to small changes in the underlying asset
   price. For a call:
@@ -46,7 +55,7 @@
     $$ \Delta_{put} = \frac{\partial put}{\partial S} = e^{(b-r)T}
     \left( N(d_1) - 1 \right) > 0 $$
 </p>
-<h3>Gamma</h3>
+<h4>Gamma</h4>
 <p>
   Gamma is the delta's sensitivity to small changes in the underlying asset
   price. Gamma is identical for a call and put option:
@@ -54,14 +63,14 @@
   = \frac{\partial^2 put}{\partial S^2}
   = \frac{n(d_1) e^{(b-r)T}}{S \sigma \sqrt{T}} > 0 $$
 </p>
-<h3>Vega</h3>
+<h4>Vega</h4>
 <p>
   Vega is the option's sensitivity to a small change in the volatility of the
   underlying asset. Vega is identical for a call and put option:
   $$ \nu_{call,put} = \frac{\partial call}{\partial \sigma}
   = \frac{\partial put}{\partial \sigma} = S e^{(b-r)T} n(d_1) \sqrt{T} > 0 $$
 </p>
-<h3>Theta</h3>
+<h4>Theta</h4>
 <p>
   Theta is the option's sensitivity to a small change in time to maturity. As
   time to maturity decreases, it is common to express theta as minus the partial
@@ -74,7 +83,7 @@
   {S e^{(b-r)T} n(d_1) \sigma}{2 \sqrt{T}}
   + (b-r) S e^{(b-r)T} N(-d_1) + r X e^{-rT} N(-d_2) \leq \geq 0 $$
 </p>
-<h3>Rho</h3>
+<h4>Rho</h4>
 <p>
   Rho is the option's sensitivity to small changes in the risk-free interest
   rate. For a call:
