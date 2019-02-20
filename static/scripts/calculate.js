@@ -3,22 +3,19 @@ function calculate(){
   // Retrieve inputs
   // Spot
   var spot = document.getElementById("spot").value;
-  spot = parseFloat(spot);
   // Strike
   var strike = document.getElementById("strike").value;
-  strike = parseFloat(strike);
   // Riskfree
   var riskfree = document.getElementById("riskfree").value;
-  riskfree = parseFloat(riskfree) / 100.0;
+  riskfree = riskfree / 100.0
   // Dividend
   var dividend = document.getElementById("dividend").value;
-  dividend = parseFloat(dividend) / 100.0;
+  dividend = dividend / 100.0
   // Maturity
   var maturity = document.getElementById("maturity").value;
-  maturity = parseFloat(maturity);
   // Volatility
   var volatility = document.getElementById("volatility").value;
-  volatility = parseFloat(volatility) / 100.0;
+  volatility = volatility / 100.0
 
   // Calculate carry rate
   var carry = 0.0;
