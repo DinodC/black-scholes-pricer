@@ -1,11 +1,11 @@
 # Black-Scholes Pricer
-The web application provides a calculator of call and put values, and sensitivities (delta, gamma, vega, theta and rho) under the Black-Scholes model. Also, the model is generalised - the user can choose the underlying asset: stock, future, or currency. Check it out on http://black-scholes.info
+The web application provides a calculator of call and put values, and sensitivities (delta, gamma, vega, theta and rho) under the Black-Scholes model. Also, the model is generalised - the user can choose the underlying asset: stock, future, or currency. Check it out on http://black-scholes.info.
 
 ## Getting Started
-To get started, clone the repository https://github.com/DinodC/black_scholes_pricer
+To get started, clone the repository https://github.com/DinodC/black_scholes_pricer.
 
 ### Prerequisites
-You will need to install: Python3, Flask, gunicorn and nose
+You will need to install: Python3, Flask, gunicorn and nose.
 
 ### Installing
 Install virtual environment
@@ -52,7 +52,7 @@ Check on http://127.0.0.1:5000/
 * [Nginx](https://www.nginx.com) - front end reverse proxy used
 
 ## Versioning
-For the versions available see the [tags on this repository](https://github.com/DinodC/black_scholes_pricer)
+For the versions available see the [tags on this repository](https://github.com/DinodC/black_scholes_pricer).
 
 ## Author
 * **Dino de Castro** - *Initial work* - [DinodC] (https://github.com/DinodC)
@@ -61,4 +61,4 @@ For the versions available see the [tags on this repository](https://github.com/
 This project is licensed under the author.
 
 ## Acknowledgments
-A big thank you to the fam - dad, mom, Bok, Anton, Brye and Livia
+A big thank you to the fam - dad, mom, Bok, Anton, Brye and Livia.
